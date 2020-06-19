@@ -2,6 +2,9 @@ import React from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Svg, Circle } from '@potion/element';
+import { Pack } from "@potion/layout";
+
 
 const Login = () => {
   const [cred, setCred] = useState({
@@ -38,7 +41,7 @@ const Login = () => {
 
   // when you have handled the token, navigate to the BubblePage route
   return (
-    <>
+    <div className="loginForm">
       <h1>Welcome to the Bubble App!</h1>
       <form onSubmit={loginUser}>
         <div className="error">{message}</div>
@@ -55,7 +58,34 @@ const Login = () => {
 
         <button className="button" type="submit">Enter</button>
       </form>
-    </>
+
+      <div className="bubbleDecor">
+        <Svg width={400} height={400}>
+          <Pack
+            data={{
+              children: [
+                { value: 1, key: '1' },
+                { value: 2, key: '2' },
+                { value: 3, key: '3' },
+              ],
+            }}
+            sum={datum => datum.value}
+            size={[400, 400]}
+            includeRoot={false}
+            nodeEnter={d => ({ ...d, r: 0 })}
+            animate
+          >{nodes => nodes.map(({ x, y, r, key }) => (
+            <Circle
+              key={key}
+              cx={x}
+              cy={y}
+              r={r}
+              fill="#f8748a"
+            />
+          ))}</Pack>
+        </Svg>
+      </div>
+    </div>
   );
 };
 

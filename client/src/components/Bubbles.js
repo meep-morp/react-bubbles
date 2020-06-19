@@ -14,6 +14,13 @@ const Bubbles = ({ colors }) => {
 
   return (
     <div className="bubble-wrap">
+      <button onClick={(e) => {
+        localStorage.removeItem("token");
+        window.location.assign("/");
+        }
+      }
+        className="signout"
+      >Sign Out</button>
       <p>bubbles</p>
       <Svg width={400} height={400}>
         <Pack

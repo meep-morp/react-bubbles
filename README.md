@@ -137,12 +137,12 @@ Build a login form to authenticate your users.
 
 **HTTP/Axios Stretch Problems**
 
-- [ ] Build a form at the bottom of `ColorList.js` to add new colors to the
+- [ x ] Build a form at the bottom of `ColorList.js` to add new colors to the
       colors data
 
 **Data Visualization**
 
-- [ ] Look at [Potion JS](https://potion.js.org/). This is the library used to
+- [ x ] Look at [Potion JS](https://potion.js.org/). This is the library used to
       display the color data
 - [ ] Play around with the data visualization happening in `Bubbles.js`. Have
       fun with this! Try different components from the library, or see if you
